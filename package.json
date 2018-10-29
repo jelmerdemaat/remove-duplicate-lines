@@ -1,6 +1,6 @@
 {
   "name": "remove-duplicate-lines",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Removes duplicate lines from a given text source",
   "main": "index.js",
   "scripts": {
