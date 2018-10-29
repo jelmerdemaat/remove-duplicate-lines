@@ -1,5 +1,7 @@
 # remove-duplicate-lines
 
+[GitHub](https://github.com/jelmerdemaat/remove-duplicate-lines) | [NPM](https://www.npmjs.com/package/remove-duplicate-lines) | [@jelmerdemaat](https://twitter.com/jelmerdemaat)
+
 Removes duplicate lines from a given input file.
 
 ## Usage
