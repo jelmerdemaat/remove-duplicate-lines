@@ -1,28 +1,29 @@
 'use strict';
 
-const fs = require('fs');
-const encoding = 'utf8';
+let defaults = {};
 
-const removeDuplicateLines = source => new Promise ((resolve, reject) => {
-    if (!source) {
-        throw Error('No input file is given.');
-    }
+const filter = (line, index, lines) => {
+	if (defaults.unique) {
+		return lines.indexOf(line) === index;
+	}
 
-    fs.readFile(source, encoding, (err, data) => {
-        if (err) {
-            reject(err);
+	return lines[index - 1] !== line;
+};
 
-            return;
-        }
+const removeDuplicateLines = (source, options = {}) => new Promise ((resolve, reject) => {
+	if (!source) {
+		reject('No input is given.');
+	}
 
-        const inputArray = data.split('\n');
+	defaults = Object.assign(defaults, options);
 
-        const output = inputArray
-            .filter((item, key) => inputArray[key - 1] !== item)
-            .join('\n');
+	const inputArray = source.split('\n');
 
-        resolve(output);
-    })
+	const output = inputArray
+		.filter(filter)
+		.join('\n');
+
+	resolve(output);
 });
 
 module.exports = removeDuplicateLines;

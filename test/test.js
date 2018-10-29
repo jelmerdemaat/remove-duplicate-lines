@@ -1,13 +1,44 @@
-const fs = require('fs');
-
 const removeDuplicateLines = require('..');
 const test = require('ava');
 
-const expected = fs.readFileSync('test/output.css', 'utf8');
-
 test(async t => {
-	const output = await removeDuplicateLines('test/input.css')
-		.catch(error => console.log(error));
+	const basic = await removeDuplicateLines(`
+		test
+		test
+		test2
+		test3
+		test34
+		test34
+		test
+		test2
+	`);
 
-	t.is(output, expected);
+	t.is(basic, `
+		test
+		test2
+		test3
+		test34
+		test
+		test2
+	`);
+
+	const unique = await removeDuplicateLines(`
+		test
+		test
+		test2
+		test3
+		test34
+		test34
+		test
+		test2
+	`,
+		{ unique: true }
+	);
+
+	t.is(unique,`
+		test
+		test2
+		test3
+		test34
+	`);
 })
