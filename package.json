@@ -1,0 +1,21 @@
+{
+  "name": "remove-duplicate-lines",
+  "version": "0.1.0",
+  "description": "Removes duplicate lines from a given text source",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava test/test.js"
+  },
+  "keywords": [
+    "remove",
+    "duplicate",
+    "lines",
+    "deduplicate",
+    "double"
+  ],
+  "author": "Jelmer de Maat",
+  "license": "SEE LICENSE IN LICENSE",
+  "devDependencies": {
+    "ava": "^0.25.0"
+  }
+}

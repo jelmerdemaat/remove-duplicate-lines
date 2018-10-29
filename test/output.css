@@ -1,0 +1,22 @@
+.test {
+    border-bottom: 0;
+    width: 32px;
+
+    width: 32px;
+    width: 2rem;
+    height: 32px;
+
+    height: 32px;
+    height: 2rem;
+    background-size: contain;
+    text-indent: -99999px;
+    position: absolute;
+    right: 48px;
+
+    right: 48px;
+    right: 3rem;
+    top: 8px;
+
+    top: 8px;
+    top: .5rem;
+}
